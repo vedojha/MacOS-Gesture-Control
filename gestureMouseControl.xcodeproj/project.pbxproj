@@ -1,0 +1,686 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0019C5AA2AF4C4B0006F8EAB /* AVCaptureSessionSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0019C5A92AF4C4B0006F8EAB /* AVCaptureSessionSetup.swift */; };
+		0019C5B02AF4C855006F8EAB /* HandSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0019C5AF2AF4C855006F8EAB /* HandSetup.swift */; };
+		0019C5B22AF4ED46006F8EAB /* KalmanFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0019C5B12AF4ED46006F8EAB /* KalmanFilter.swift */; };
+		002F690B2AFF7B2300885F0C /* ZoomStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002F690A2AFF7B2300885F0C /* ZoomStateMachine.swift */; };
+		00310F142AFDE21F00E15CAB /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00310F132AFDE21F00E15CAB /* StateMachine.swift */; };
+		00310F162AFDE9C200E15CAB /* CoordinateCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00310F152AFDE9C200E15CAB /* CoordinateCalcs.swift */; };
+		00310F182AFF524700E15CAB /* MouseEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00310F172AFF524700E15CAB /* MouseEventHandler.swift */; };
+		0090494D2AF98AFC004707C3 /* SerialPortManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0090494C2AF98AFC004707C3 /* SerialPortManager.swift */; };
+		009049502AF98BB7004707C3 /* ORSSerial in Frameworks */ = {isa = PBXBuildFile; productRef = 0090494F2AF98BB7004707C3 /* ORSSerial */; };
+		00B6CE1F2AEC8BCA00C486D2 /* gestureMouseControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CE1E2AEC8BCA00C486D2 /* gestureMouseControlApp.swift */; };
+		00B6CE212AEC8BCA00C486D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CE202AEC8BCA00C486D2 /* ContentView.swift */; };
+		00B6CE232AEC8BCB00C486D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B6CE222AEC8BCB00C486D2 /* Assets.xcassets */; };
+		00B6CE262AEC8BCB00C486D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B6CE252AEC8BCB00C486D2 /* Preview Assets.xcassets */; };
+		00B6CE312AEC8BCB00C486D2 /* gestureMouseControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CE302AEC8BCB00C486D2 /* gestureMouseControlTests.swift */; };
+		00B6CE3B2AEC8BCB00C486D2 /* gestureMouseControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CE3A2AEC8BCB00C486D2 /* gestureMouseControlUITests.swift */; };
+		00B6CE3D2AEC8BCB00C486D2 /* gestureMouseControlUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CE3C2AEC8BCB00C486D2 /* gestureMouseControlUITestsLaunchTests.swift */; };
+		00B6CE4A2AEC8C0D00C486D2 /* HandTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CE492AEC8C0D00C486D2 /* HandTrackingViewModel.swift */; };
+		00C3F9492AF21F4A004A60CD /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 00C3F9482AF21F4A004A60CD /* AudioKit */; };
+		00C3F94B2AF22831004A60CD /* AudioWaveGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3F94A2AF22831004A60CD /* AudioWaveGenerator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00B6CE2D2AEC8BCB00C486D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00B6CE132AEC8BCA00C486D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00B6CE1A2AEC8BCA00C486D2;
+			remoteInfo = gestureMouseControl;
+		};
+		00B6CE372AEC8BCB00C486D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00B6CE132AEC8BCA00C486D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00B6CE1A2AEC8BCA00C486D2;
+			remoteInfo = gestureMouseControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0019C5A92AF4C4B0006F8EAB /* AVCaptureSessionSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureSessionSetup.swift; sourceTree = "<group>"; };
+		0019C5AF2AF4C855006F8EAB /* HandSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandSetup.swift; sourceTree = "<group>"; };
+		0019C5B12AF4ED46006F8EAB /* KalmanFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KalmanFilter.swift; sourceTree = "<group>"; };
+		002F690A2AFF7B2300885F0C /* ZoomStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomStateMachine.swift; sourceTree = "<group>"; };
+		00310F132AFDE21F00E15CAB /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		00310F152AFDE9C200E15CAB /* CoordinateCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateCalcs.swift; sourceTree = "<group>"; };
+		00310F172AFF524700E15CAB /* MouseEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseEventHandler.swift; sourceTree = "<group>"; };
+		0090494C2AF98AFC004707C3 /* SerialPortManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialPortManager.swift; sourceTree = "<group>"; };
+		00B6CE1B2AEC8BCA00C486D2 /* gestureMouseControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gestureMouseControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B6CE1E2AEC8BCA00C486D2 /* gestureMouseControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gestureMouseControlApp.swift; sourceTree = "<group>"; };
+		00B6CE202AEC8BCA00C486D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		00B6CE222AEC8BCB00C486D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00B6CE252AEC8BCB00C486D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		00B6CE272AEC8BCB00C486D2 /* gestureMouseControl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gestureMouseControl.entitlements; sourceTree = "<group>"; };
+		00B6CE2C2AEC8BCB00C486D2 /* gestureMouseControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gestureMouseControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B6CE302AEC8BCB00C486D2 /* gestureMouseControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gestureMouseControlTests.swift; sourceTree = "<group>"; };
+		00B6CE362AEC8BCB00C486D2 /* gestureMouseControlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gestureMouseControlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00B6CE3A2AEC8BCB00C486D2 /* gestureMouseControlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gestureMouseControlUITests.swift; sourceTree = "<group>"; };
+		00B6CE3C2AEC8BCB00C486D2 /* gestureMouseControlUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gestureMouseControlUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		00B6CE492AEC8C0D00C486D2 /* HandTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandTrackingViewModel.swift; sourceTree = "<group>"; };
+		00C3F94A2AF22831004A60CD /* AudioWaveGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioWaveGenerator.swift; sourceTree = "<group>"; };
+		00F7B0F82AF167A1009CD0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00B6CE182AEC8BCA00C486D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00C3F9492AF21F4A004A60CD /* AudioKit in Frameworks */,
+				009049502AF98BB7004707C3 /* ORSSerial in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B6CE292AEC8BCB00C486D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B6CE332AEC8BCB00C486D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00B6CE122AEC8BCA00C486D2 = {
+			isa = PBXGroup;
+			children = (
+				00B6CE1D2AEC8BCA00C486D2 /* gestureMouseControl */,
+				00B6CE2F2AEC8BCB00C486D2 /* gestureMouseControlTests */,
+				00B6CE392AEC8BCB00C486D2 /* gestureMouseControlUITests */,
+				00B6CE1C2AEC8BCA00C486D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00B6CE1C2AEC8BCA00C486D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00B6CE1B2AEC8BCA00C486D2 /* gestureMouseControl.app */,
+				00B6CE2C2AEC8BCB00C486D2 /* gestureMouseControlTests.xctest */,
+				00B6CE362AEC8BCB00C486D2 /* gestureMouseControlUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00B6CE1D2AEC8BCA00C486D2 /* gestureMouseControl */ = {
+			isa = PBXGroup;
+			children = (
+				00F7B0F82AF167A1009CD0F9 /* Info.plist */,
+				00B6CE1E2AEC8BCA00C486D2 /* gestureMouseControlApp.swift */,
+				00B6CE202AEC8BCA00C486D2 /* ContentView.swift */,
+				0019C5A92AF4C4B0006F8EAB /* AVCaptureSessionSetup.swift */,
+				00310F152AFDE9C200E15CAB /* CoordinateCalcs.swift */,
+				0019C5AF2AF4C855006F8EAB /* HandSetup.swift */,
+				00B6CE492AEC8C0D00C486D2 /* HandTrackingViewModel.swift */,
+				0019C5B12AF4ED46006F8EAB /* KalmanFilter.swift */,
+				00310F172AFF524700E15CAB /* MouseEventHandler.swift */,
+				0090494C2AF98AFC004707C3 /* SerialPortManager.swift */,
+				00310F132AFDE21F00E15CAB /* StateMachine.swift */,
+				002F690A2AFF7B2300885F0C /* ZoomStateMachine.swift */,
+				00B6CE222AEC8BCB00C486D2 /* Assets.xcassets */,
+				00B6CE272AEC8BCB00C486D2 /* gestureMouseControl.entitlements */,
+				00B6CE242AEC8BCB00C486D2 /* Preview Content */,
+				00C3F94A2AF22831004A60CD /* AudioWaveGenerator.swift */,
+			);
+			path = gestureMouseControl;
+			sourceTree = "<group>";
+		};
+		00B6CE242AEC8BCB00C486D2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				00B6CE252AEC8BCB00C486D2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		00B6CE2F2AEC8BCB00C486D2 /* gestureMouseControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				00B6CE302AEC8BCB00C486D2 /* gestureMouseControlTests.swift */,
+			);
+			path = gestureMouseControlTests;
+			sourceTree = "<group>";
+		};
+		00B6CE392AEC8BCB00C486D2 /* gestureMouseControlUITests */ = {
+			isa = PBXGroup;
+			children = (
+				00B6CE3A2AEC8BCB00C486D2 /* gestureMouseControlUITests.swift */,
+				00B6CE3C2AEC8BCB00C486D2 /* gestureMouseControlUITestsLaunchTests.swift */,
+			);
+			path = gestureMouseControlUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00B6CE1A2AEC8BCA00C486D2 /* gestureMouseControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00B6CE402AEC8BCB00C486D2 /* Build configuration list for PBXNativeTarget "gestureMouseControl" */;
+			buildPhases = (
+				00B6CE172AEC8BCA00C486D2 /* Sources */,
+				00B6CE182AEC8BCA00C486D2 /* Frameworks */,
+				00B6CE192AEC8BCA00C486D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = gestureMouseControl;
+			packageProductDependencies = (
+				00C3F9482AF21F4A004A60CD /* AudioKit */,
+				0090494F2AF98BB7004707C3 /* ORSSerial */,
+			);
+			productName = gestureMouseControl;
+			productReference = 00B6CE1B2AEC8BCA00C486D2 /* gestureMouseControl.app */;
+			productType = "com.apple.product-type.application";
+		};
+		00B6CE2B2AEC8BCB00C486D2 /* gestureMouseControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00B6CE432AEC8BCB00C486D2 /* Build configuration list for PBXNativeTarget "gestureMouseControlTests" */;
+			buildPhases = (
+				00B6CE282AEC8BCB00C486D2 /* Sources */,
+				00B6CE292AEC8BCB00C486D2 /* Frameworks */,
+				00B6CE2A2AEC8BCB00C486D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00B6CE2E2AEC8BCB00C486D2 /* PBXTargetDependency */,
+			);
+			name = gestureMouseControlTests;
+			productName = gestureMouseControlTests;
+			productReference = 00B6CE2C2AEC8BCB00C486D2 /* gestureMouseControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		00B6CE352AEC8BCB00C486D2 /* gestureMouseControlUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00B6CE462AEC8BCB00C486D2 /* Build configuration list for PBXNativeTarget "gestureMouseControlUITests" */;
+			buildPhases = (
+				00B6CE322AEC8BCB00C486D2 /* Sources */,
+				00B6CE332AEC8BCB00C486D2 /* Frameworks */,
+				00B6CE342AEC8BCB00C486D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00B6CE382AEC8BCB00C486D2 /* PBXTargetDependency */,
+			);
+			name = gestureMouseControlUITests;
+			productName = gestureMouseControlUITests;
+			productReference = 00B6CE362AEC8BCB00C486D2 /* gestureMouseControlUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00B6CE132AEC8BCA00C486D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					00B6CE1A2AEC8BCA00C486D2 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					00B6CE2B2AEC8BCB00C486D2 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 00B6CE1A2AEC8BCA00C486D2;
+					};
+					00B6CE352AEC8BCB00C486D2 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 00B6CE1A2AEC8BCA00C486D2;
+					};
+				};
+			};
+			buildConfigurationList = 00B6CE162AEC8BCA00C486D2 /* Build configuration list for PBXProject "gestureMouseControl" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00B6CE122AEC8BCA00C486D2;
+			packageReferences = (
+				00C3F9472AF21F4A004A60CD /* XCRemoteSwiftPackageReference "AudioKit" */,
+				0090494E2AF98BB7004707C3 /* XCRemoteSwiftPackageReference "ORSSerialPort" */,
+			);
+			productRefGroup = 00B6CE1C2AEC8BCA00C486D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00B6CE1A2AEC8BCA00C486D2 /* gestureMouseControl */,
+				00B6CE2B2AEC8BCB00C486D2 /* gestureMouseControlTests */,
+				00B6CE352AEC8BCB00C486D2 /* gestureMouseControlUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00B6CE192AEC8BCA00C486D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00B6CE262AEC8BCB00C486D2 /* Preview Assets.xcassets in Resources */,
+				00B6CE232AEC8BCB00C486D2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B6CE2A2AEC8BCB00C486D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B6CE342AEC8BCB00C486D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00B6CE172AEC8BCA00C486D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00310F162AFDE9C200E15CAB /* CoordinateCalcs.swift in Sources */,
+				00B6CE212AEC8BCA00C486D2 /* ContentView.swift in Sources */,
+				00B6CE4A2AEC8C0D00C486D2 /* HandTrackingViewModel.swift in Sources */,
+				002F690B2AFF7B2300885F0C /* ZoomStateMachine.swift in Sources */,
+				00310F142AFDE21F00E15CAB /* StateMachine.swift in Sources */,
+				00B6CE1F2AEC8BCA00C486D2 /* gestureMouseControlApp.swift in Sources */,
+				0019C5AA2AF4C4B0006F8EAB /* AVCaptureSessionSetup.swift in Sources */,
+				0019C5B02AF4C855006F8EAB /* HandSetup.swift in Sources */,
+				00C3F94B2AF22831004A60CD /* AudioWaveGenerator.swift in Sources */,
+				0090494D2AF98AFC004707C3 /* SerialPortManager.swift in Sources */,
+				0019C5B22AF4ED46006F8EAB /* KalmanFilter.swift in Sources */,
+				00310F182AFF524700E15CAB /* MouseEventHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B6CE282AEC8BCB00C486D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00B6CE312AEC8BCB00C486D2 /* gestureMouseControlTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00B6CE322AEC8BCB00C486D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00B6CE3D2AEC8BCB00C486D2 /* gestureMouseControlUITestsLaunchTests.swift in Sources */,
+				00B6CE3B2AEC8BCB00C486D2 /* gestureMouseControlUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00B6CE2E2AEC8BCB00C486D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00B6CE1A2AEC8BCA00C486D2 /* gestureMouseControl */;
+			targetProxy = 00B6CE2D2AEC8BCB00C486D2 /* PBXContainerItemProxy */;
+		};
+		00B6CE382AEC8BCB00C486D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00B6CE1A2AEC8BCA00C486D2 /* gestureMouseControl */;
+			targetProxy = 00B6CE372AEC8BCB00C486D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		00B6CE3E2AEC8BCB00C486D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		00B6CE3F2AEC8BCB00C486D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		00B6CE412AEC8BCB00C486D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = gestureMouseControl/gestureMouseControl.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"gestureMouseControl/Preview Content\"";
+				DEVELOPMENT_TEAM = Z3N67X7ZAZ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = gestureMouseControl/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"Give Cam\"";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Give mic";
+				INFOPLIST_KEY_OSBundleUsageDescription = "give usb";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.newTestAudrobe.gestureMouseControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		00B6CE422AEC8BCB00C486D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = gestureMouseControl/gestureMouseControl.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"gestureMouseControl/Preview Content\"";
+				DEVELOPMENT_TEAM = Z3N67X7ZAZ;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = gestureMouseControl/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"Give Cam\"";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Give mic";
+				INFOPLIST_KEY_OSBundleUsageDescription = "give usb";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.newTestAudrobe.gestureMouseControl;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		00B6CE442AEC8BCB00C486D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z3N67X7ZAZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.newTestAudrobe.gestureMouseControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gestureMouseControl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gestureMouseControl";
+			};
+			name = Debug;
+		};
+		00B6CE452AEC8BCB00C486D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z3N67X7ZAZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.newTestAudrobe.gestureMouseControlTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/gestureMouseControl.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/gestureMouseControl";
+			};
+			name = Release;
+		};
+		00B6CE472AEC8BCB00C486D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z3N67X7ZAZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.newTestAudrobe.gestureMouseControlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = gestureMouseControl;
+			};
+			name = Debug;
+		};
+		00B6CE482AEC8BCB00C486D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Z3N67X7ZAZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.newTestAudrobe.gestureMouseControlUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = gestureMouseControl;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00B6CE162AEC8BCA00C486D2 /* Build configuration list for PBXProject "gestureMouseControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B6CE3E2AEC8BCB00C486D2 /* Debug */,
+				00B6CE3F2AEC8BCB00C486D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00B6CE402AEC8BCB00C486D2 /* Build configuration list for PBXNativeTarget "gestureMouseControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B6CE412AEC8BCB00C486D2 /* Debug */,
+				00B6CE422AEC8BCB00C486D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00B6CE432AEC8BCB00C486D2 /* Build configuration list for PBXNativeTarget "gestureMouseControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B6CE442AEC8BCB00C486D2 /* Debug */,
+				00B6CE452AEC8BCB00C486D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00B6CE462AEC8BCB00C486D2 /* Build configuration list for PBXNativeTarget "gestureMouseControlUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00B6CE472AEC8BCB00C486D2 /* Debug */,
+				00B6CE482AEC8BCB00C486D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0090494E2AF98BB7004707C3 /* XCRemoteSwiftPackageReference "ORSSerialPort" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/armadsen/ORSSerialPort";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+		00C3F9472AF21F4A004A60CD /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0090494F2AF98BB7004707C3 /* ORSSerial */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0090494E2AF98BB7004707C3 /* XCRemoteSwiftPackageReference "ORSSerialPort" */;
+			productName = ORSSerial;
+		};
+		00C3F9482AF21F4A004A60CD /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00C3F9472AF21F4A004A60CD /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 00B6CE132AEC8BCA00C486D2 /* Project object */;
+}
