@@ -16,13 +16,14 @@ struct Constants {
 }
 
 
-class ZoomStateMachine: BaseHandGestureState {
+class ZoomStateMachine: HandGestureStateProtocol {
+    weak var context: HandGestureContext?
     private var zoomGestureState: ZoomGestureState = .idle
     private var lastZoomActionTime: Date?
     private var currentZoomAverageDistance: CGFloat = 0.0
     private var lastZoomDistance: CGFloat = 0.0
 
-     func transition(for hand: Hand) -> HandGestureStateProtocol {
+     func transition() -> HandGestureStateProtocol {
 //        let zoomState = handleZoomGestureChange(using: hand)
 //        
 //        switch zoomState {
@@ -34,9 +35,9 @@ class ZoomStateMachine: BaseHandGestureState {
          return self
     }
 
-    func performAction(with handData: Hand) {
+    func performAction() {
         if zoomGestureState == .zoomIn || zoomGestureState == .zoomOut {
-            performZoomAction(zoomGestureState, with: handData)
+//            performZoomAction(zoomGestureState, with: handData)
         }
     }
 }
@@ -101,7 +102,7 @@ extension ZoomStateMachine {
     }
     
     private func applyZoomAction(zoomIncrement: Int, at screenPoint: CGPoint) {
-        let optionFlag: CGEventFlags = .maskAlternate
+//        let optionFlag: CGEventFlags = .maskAlternate
 //        mouseEventHandler?.postKeyEvent(virtualKey: Constants.optionKeyVirtualCode, keyDown: true, flags: optionFlag)
 //        mouseEventHandler?.postScrollEvent(with: -zoomIncrement, at: screenPoint, flags: optionFlag)
 //        mouseEventHandler?.postKeyEvent(virtualKey: Constants.optionKeyVirtualCode, keyDown: false, flags: optionFlag)

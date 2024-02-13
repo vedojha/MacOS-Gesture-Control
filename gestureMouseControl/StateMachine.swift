@@ -1,7 +1,8 @@
 import AVFoundation
+import Combine
 
 struct HandTrackingThresholds {
-    static let pinchDurationThreshold: TimeInterval = 0.5
+    static let pinchDurationThreshold: TimeInterval = 0.25
     static let pinchDragDistanceThreshold: CGFloat = 0.1
     static let doublePinchTimeout: TimeInterval = 0.1
 }
@@ -13,26 +14,15 @@ protocol HandGestureStateProtocol: AnyObject {
 }
 
 class HandGestureContext {
-    var handData: Hand
+    @Published var handData: Hand
     var mouseEventHandler: MouseEventHandlingProtocol?
-
+    let drvClient = SerialPortManager(hostname: "localhost", port: 9999)
+    
     init(handData: Hand, mouseEventHandler: MouseEventHandlingProtocol?) {
         self.handData = handData
         self.mouseEventHandler = mouseEventHandler
     }
 }
-
-class BaseHandGestureState: HandGestureStateProtocol {
-    weak var context: HandGestureContext?
-    
-    func transition() -> HandGestureStateProtocol {
-        fatalError("Transition method must be overridden")
-    }
-    func performAction() {
-        fatalError("PerformAction method must be overridden")
-    }
-}
-
 
 class HandGestureStateMachine {
     private var currentState: HandGestureStateProtocol
@@ -52,13 +42,14 @@ class HandGestureStateMachine {
             nextState.context = context
             currentState = nextState
         }
-        
         currentState.performAction()
     }
 }
 
-class HoverState: BaseHandGestureState {
-    override func transition() -> HandGestureStateProtocol {
+class HoverState: HandGestureStateProtocol {
+    weak var context: HandGestureContext?
+    
+    func transition() -> HandGestureStateProtocol {
         guard let handData = context?.handData else { return self }
 
         if handData.isDoublePinchActive {
@@ -71,19 +62,20 @@ class HoverState: BaseHandGestureState {
         return self
     }
 
-    override func performAction() {
+    func performAction() {
         guard let handData = context?.handData, let mouseEventHandler = context?.mouseEventHandler else { return }
         mouseEventHandler.postMouseEvent(type: .mouseMoved, at: handData.screenPoint, clickState: 1)
         context?.handData.lastScreenPoint = handData.screenPoint
     }
 }
 
-class PinchState: BaseHandGestureState {
+class PinchState: HandGestureStateProtocol {
+    weak var context: HandGestureContext?
     private var pinchStartTime: Date?
     private var pinchStartPoint: CGPoint?
     private var hasPerformedAction: Bool = false
 
-    override func transition() -> HandGestureStateProtocol {
+    func transition() -> HandGestureStateProtocol {
         guard let handData = context?.handData else { return self }
 
         if handData.isIndexPinchActive {
@@ -105,6 +97,7 @@ class PinchState: BaseHandGestureState {
             }
         } else {
             if hasPerformedAction {
+                context?.drvClient.send(integer: DRVConstants.shortSingleClick80)
                 context?.mouseEventHandler?.postMouseEvent(type: .leftMouseUp, at: handData.screenPoint, clickState: 1)
             }
             pinchStartTime = nil
@@ -114,19 +107,13 @@ class PinchState: BaseHandGestureState {
         }
     }
 
-    override func performAction() {
+    func performAction() {
         guard let handData = context?.handData, let mouseEventHandler = context?.mouseEventHandler else { return }
 
         if !hasPerformedAction {
             mouseEventHandler.postMouseEvent(type: .leftMouseDown, at: handData.screenPoint, clickState: 1)
             hasPerformedAction = true
         }
-    }
-
-    private func resetState() {
-        pinchStartTime = nil
-        pinchStartPoint = nil
-        hasPerformedAction = false
     }
     
     private func distance(from start: CGPoint, to end: CGPoint) -> CGFloat {
@@ -136,8 +123,9 @@ class PinchState: BaseHandGestureState {
     }
 }
 
-class DragState: BaseHandGestureState {
-    override func transition() -> HandGestureStateProtocol {
+class DragState: HandGestureStateProtocol {
+    weak var context: HandGestureContext?
+    func transition() -> HandGestureStateProtocol {
         guard let handData = context?.handData else { return self }
 
         if !handData.isIndexPinchActive {
@@ -147,17 +135,18 @@ class DragState: BaseHandGestureState {
         return self
     }
 
-    override func performAction() {
+    func performAction() {
         guard let handData = context?.handData, let mouseEventHandler = context?.mouseEventHandler else { return }
         mouseEventHandler.postMouseEvent(type: .leftMouseDragged, at: handData.screenPoint, clickState: 1)
     }
 }
 
-class DoublePinchState: BaseHandGestureState {
+class DoublePinchState: HandGestureStateProtocol {
+    weak var context: HandGestureContext?
     private var doublePinchPerformed = false
     private var firstPinchTime: Date?
 
-    override func transition() -> HandGestureStateProtocol {
+    func transition() -> HandGestureStateProtocol {
         guard let handData = context?.handData else { return self }
 
         if handData.isDoublePinchActive {
@@ -165,6 +154,7 @@ class DoublePinchState: BaseHandGestureState {
                 firstPinchTime = Date()
             } else if let firstTime = firstPinchTime, Date().timeIntervalSince(firstTime) <= HandTrackingThresholds.doublePinchTimeout {
                 if !doublePinchPerformed {
+                    context?.drvClient.send(integer: DRVConstants.shortDoubleClick80)
                     context?.mouseEventHandler?.postLeftDoubleClickMouseEvent(at: handData.screenPoint)
                     doublePinchPerformed = true
                 }
@@ -184,8 +174,8 @@ class DoublePinchState: BaseHandGestureState {
         doublePinchPerformed = false
     }
 
-    override func performAction() {
-        // Implement any actions specific to DoublePinchState here, if needed.
+    func performAction() {
+        
     }
 }
 

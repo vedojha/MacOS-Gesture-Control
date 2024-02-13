@@ -1,7 +1,20 @@
+import SwiftUI
 import AVFoundation
 import Vision
+import Combine
 
-extension HandTrackingViewModel {
+class CameraManager: NSObject, ObservableObject {
+    @Published var previewLayer: AVCaptureVideoPreviewLayer?
+    private var cameraFeedSession = AVCaptureSession()
+    private let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutputQueue")
+    let handPosePublisher = PassthroughSubject<VNHumanHandPoseObservation, Error>()
+    
+    override init() {
+        super.init()
+        setupAVSession()
+        setupPreviewLayer()
+    }
+    
     func setupAVSession() {
         cameraFeedSession.beginConfiguration()
         guard let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front),
@@ -20,7 +33,6 @@ extension HandTrackingViewModel {
                 connection.isVideoMirrored = true
             }
         }
-//        previewLayer = createPreviewLayer()
     }
     
     func startSession() {
@@ -35,27 +47,45 @@ extension HandTrackingViewModel {
         }
     }
     
-    func createPreviewLayer() -> AVCaptureVideoPreviewLayer {
-        let previewLayer = AVCaptureVideoPreviewLayer(session: cameraFeedSession)
-        previewLayer.videoGravity = .resizeAspectFill
-        previewLayer.connection?.automaticallyAdjustsVideoMirroring = false
-        previewLayer.connection?.isVideoMirrored = true
-        return previewLayer
+    private func setupPreviewLayer() {
+        let layer = AVCaptureVideoPreviewLayer(session: cameraFeedSession)
+        layer.videoGravity = .resizeAspectFill
+        layer.connection?.automaticallyAdjustsVideoMirroring = false
+        layer.connection?.isVideoMirrored = true
+        previewLayer = layer
     }
 }
 
-extension HandTrackingViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
+extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        
+        let handPoseRequest = VNDetectHumanHandPoseRequest()
         let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .up, options: [:])
         do {
             try handler.perform([handPoseRequest])
-            guard let observation = handPoseRequest.results?.first as? VNHumanHandPoseObservation else { return }
-            self.process(hand: observation)
+            if let observation = handPoseRequest.results?.first as? VNHumanHandPoseObservation {
+                handPosePublisher.send(observation)
+            }
         } catch {
-            print("Failed to perform Vision request: \(error)")
+            handPosePublisher.send(completion: .failure(error))
         }
     }
 }
 
+struct CameraPreview: NSViewRepresentable {
+    var previewLayer: AVCaptureVideoPreviewLayer
+
+    func makeNSView(context: Context) -> NSView {
+        let view = NSView()
+        view.wantsLayer = true
+        view.layer = previewLayer
+        return view
+    }
+
+    func updateNSView(_ nsView: NSView, context: Context) {
+        if nsView.layer != previewLayer {
+            nsView.layer = previewLayer
+        }
+        previewLayer.frame = nsView.bounds
+    }
+}

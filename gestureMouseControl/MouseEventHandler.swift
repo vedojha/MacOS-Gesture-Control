@@ -1,8 +1,8 @@
 import AVFoundation
 
 protocol MouseEventHandlingProtocol: AnyObject {
-    func postLeftDoubleClickMouseEvent(at point: CGPoint)
     func postLeftSingleClickMouseEvent(at point: CGPoint)
+    func postLeftDoubleClickMouseEvent(at point: CGPoint)
     func postMouseEvent(type: CGEventType, at point: CGPoint, clickState: Int)
     func postKeyEvent(virtualKey: CGKeyCode, keyDown: Bool, flags: CGEventFlags)
     func postScrollEvent(with increment: Int, at point: CGPoint, flags: CGEventFlags)
@@ -13,9 +13,11 @@ class MouseEventHandler: MouseEventHandlingProtocol {
     private init() {}
 
     func postLeftDoubleClickMouseEvent(at point: CGPoint) {
-        postLeftSingleClickMouseEvent(at: point)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.postLeftSingleClickMouseEvent(at: point)
+        postMouseEvent(type: .leftMouseDown, at: point, clickState: 1)
+        postMouseEvent(type: .leftMouseUp, at: point, clickState: 1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
+            postMouseEvent(type: .leftMouseDown, at: point, clickState: 2)
+            postMouseEvent(type: .leftMouseUp, at: point, clickState: 2)
         }
     }
 

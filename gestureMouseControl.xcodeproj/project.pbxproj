@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0019C5AA2AF4C4B0006F8EAB /* AVCaptureSessionSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0019C5A92AF4C4B0006F8EAB /* AVCaptureSessionSetup.swift */; };
 		0019C5B02AF4C855006F8EAB /* HandSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0019C5AF2AF4C855006F8EAB /* HandSetup.swift */; };
 		0019C5B22AF4ED46006F8EAB /* KalmanFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0019C5B12AF4ED46006F8EAB /* KalmanFilter.swift */; };
 		002F690B2AFF7B2300885F0C /* ZoomStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002F690A2AFF7B2300885F0C /* ZoomStateMachine.swift */; };
 		00310F142AFDE21F00E15CAB /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00310F132AFDE21F00E15CAB /* StateMachine.swift */; };
 		00310F162AFDE9C200E15CAB /* CoordinateCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00310F152AFDE9C200E15CAB /* CoordinateCalcs.swift */; };
 		00310F182AFF524700E15CAB /* MouseEventHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00310F172AFF524700E15CAB /* MouseEventHandler.swift */; };
+		003BF7602B029D6900B52DB6 /* FrameWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003BF75F2B029D6900B52DB6 /* FrameWindow.swift */; };
+		00735B512B01FCD600D5E3C0 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00735B502B01FCD600D5E3C0 /* CameraManager.swift */; };
+		00735B532B02211600D5E3C0 /* ScreenRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00735B522B02211600D5E3C0 /* ScreenRecorder.swift */; };
 		0090494D2AF98AFC004707C3 /* SerialPortManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0090494C2AF98AFC004707C3 /* SerialPortManager.swift */; };
 		009049502AF98BB7004707C3 /* ORSSerial in Frameworks */ = {isa = PBXBuildFile; productRef = 0090494F2AF98BB7004707C3 /* ORSSerial */; };
 		00B6CE1F2AEC8BCA00C486D2 /* gestureMouseControlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CE1E2AEC8BCA00C486D2 /* gestureMouseControlApp.swift */; };
@@ -24,7 +26,6 @@
 		00B6CE3B2AEC8BCB00C486D2 /* gestureMouseControlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CE3A2AEC8BCB00C486D2 /* gestureMouseControlUITests.swift */; };
 		00B6CE3D2AEC8BCB00C486D2 /* gestureMouseControlUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CE3C2AEC8BCB00C486D2 /* gestureMouseControlUITestsLaunchTests.swift */; };
 		00B6CE4A2AEC8C0D00C486D2 /* HandTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B6CE492AEC8C0D00C486D2 /* HandTrackingViewModel.swift */; };
-		00C3F9492AF21F4A004A60CD /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 00C3F9482AF21F4A004A60CD /* AudioKit */; };
 		00C3F94B2AF22831004A60CD /* AudioWaveGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3F94A2AF22831004A60CD /* AudioWaveGenerator.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,13 +47,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0019C5A92AF4C4B0006F8EAB /* AVCaptureSessionSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureSessionSetup.swift; sourceTree = "<group>"; };
 		0019C5AF2AF4C855006F8EAB /* HandSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandSetup.swift; sourceTree = "<group>"; };
 		0019C5B12AF4ED46006F8EAB /* KalmanFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KalmanFilter.swift; sourceTree = "<group>"; };
 		002F690A2AFF7B2300885F0C /* ZoomStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomStateMachine.swift; sourceTree = "<group>"; };
 		00310F132AFDE21F00E15CAB /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		00310F152AFDE9C200E15CAB /* CoordinateCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateCalcs.swift; sourceTree = "<group>"; };
 		00310F172AFF524700E15CAB /* MouseEventHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseEventHandler.swift; sourceTree = "<group>"; };
+		003BF75F2B029D6900B52DB6 /* FrameWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameWindow.swift; sourceTree = "<group>"; };
+		00735B502B01FCD600D5E3C0 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		00735B522B02211600D5E3C0 /* ScreenRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecorder.swift; sourceTree = "<group>"; };
 		0090494C2AF98AFC004707C3 /* SerialPortManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialPortManager.swift; sourceTree = "<group>"; };
 		00B6CE1B2AEC8BCA00C486D2 /* gestureMouseControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gestureMouseControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B6CE1E2AEC8BCA00C486D2 /* gestureMouseControlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gestureMouseControlApp.swift; sourceTree = "<group>"; };
@@ -75,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00C3F9492AF21F4A004A60CD /* AudioKit in Frameworks */,
 				009049502AF98BB7004707C3 /* ORSSerial in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,19 +125,21 @@
 				00F7B0F82AF167A1009CD0F9 /* Info.plist */,
 				00B6CE1E2AEC8BCA00C486D2 /* gestureMouseControlApp.swift */,
 				00B6CE202AEC8BCA00C486D2 /* ContentView.swift */,
-				0019C5A92AF4C4B0006F8EAB /* AVCaptureSessionSetup.swift */,
+				00735B502B01FCD600D5E3C0 /* CameraManager.swift */,
 				00310F152AFDE9C200E15CAB /* CoordinateCalcs.swift */,
+				003BF75F2B029D6900B52DB6 /* FrameWindow.swift */,
 				0019C5AF2AF4C855006F8EAB /* HandSetup.swift */,
 				00B6CE492AEC8C0D00C486D2 /* HandTrackingViewModel.swift */,
 				0019C5B12AF4ED46006F8EAB /* KalmanFilter.swift */,
 				00310F172AFF524700E15CAB /* MouseEventHandler.swift */,
+				00735B522B02211600D5E3C0 /* ScreenRecorder.swift */,
 				0090494C2AF98AFC004707C3 /* SerialPortManager.swift */,
 				00310F132AFDE21F00E15CAB /* StateMachine.swift */,
 				002F690A2AFF7B2300885F0C /* ZoomStateMachine.swift */,
+				00C3F94A2AF22831004A60CD /* AudioWaveGenerator.swift */,
 				00B6CE222AEC8BCB00C486D2 /* Assets.xcassets */,
 				00B6CE272AEC8BCB00C486D2 /* gestureMouseControl.entitlements */,
 				00B6CE242AEC8BCB00C486D2 /* Preview Content */,
-				00C3F94A2AF22831004A60CD /* AudioWaveGenerator.swift */,
 			);
 			path = gestureMouseControl;
 			sourceTree = "<group>";
@@ -182,7 +186,6 @@
 			);
 			name = gestureMouseControl;
 			packageProductDependencies = (
-				00C3F9482AF21F4A004A60CD /* AudioKit */,
 				0090494F2AF98BB7004707C3 /* ORSSerial */,
 			);
 			productName = gestureMouseControl;
@@ -304,12 +307,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				00310F162AFDE9C200E15CAB /* CoordinateCalcs.swift in Sources */,
+				003BF7602B029D6900B52DB6 /* FrameWindow.swift in Sources */,
+				00735B532B02211600D5E3C0 /* ScreenRecorder.swift in Sources */,
+				00735B512B01FCD600D5E3C0 /* CameraManager.swift in Sources */,
 				00B6CE212AEC8BCA00C486D2 /* ContentView.swift in Sources */,
 				00B6CE4A2AEC8C0D00C486D2 /* HandTrackingViewModel.swift in Sources */,
 				002F690B2AFF7B2300885F0C /* ZoomStateMachine.swift in Sources */,
 				00310F142AFDE21F00E15CAB /* StateMachine.swift in Sources */,
 				00B6CE1F2AEC8BCA00C486D2 /* gestureMouseControlApp.swift in Sources */,
-				0019C5AA2AF4C4B0006F8EAB /* AVCaptureSessionSetup.swift in Sources */,
 				0019C5B02AF4C855006F8EAB /* HandSetup.swift in Sources */,
 				00C3F94B2AF22831004A60CD /* AudioWaveGenerator.swift in Sources */,
 				0090494D2AF98AFC004707C3 /* SerialPortManager.swift in Sources */,
@@ -488,6 +493,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = gestureMouseControl/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCameraUsageDescription = "\"Give Cam\"";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Give mic";
@@ -521,6 +527,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = gestureMouseControl/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_NSCameraUsageDescription = "\"Give Cam\"";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Give mic";
@@ -674,11 +681,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0090494E2AF98BB7004707C3 /* XCRemoteSwiftPackageReference "ORSSerialPort" */;
 			productName = ORSSerial;
-		};
-		00C3F9482AF21F4A004A60CD /* AudioKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 00C3F9472AF21F4A004A60CD /* XCRemoteSwiftPackageReference "AudioKit" */;
-			productName = AudioKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

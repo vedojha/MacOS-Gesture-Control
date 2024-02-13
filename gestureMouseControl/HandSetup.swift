@@ -1,6 +1,4 @@
-import Foundation
 import CoreGraphics
-import Vision
 
 struct Hand {
     struct Fingertips {
@@ -74,6 +72,7 @@ struct Hand {
         let baselineAverageDistance = baselineDistances.average
         normalizationFactor = baselineAverageDistance / currentAverageDistance
 //        printNumbers()
+//        print(screenPoint)
     }
     
     func printNumbers() {

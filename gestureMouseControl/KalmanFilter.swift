@@ -1,17 +1,16 @@
 import simd
+import SwiftUI
 
 class KalmanFilter {
     private var stateEstimate: SIMD2<Double>
     private var errorCovariance: simd_double2x2
-    
     private let stateTransitionMatrix: simd_double2x2
     private let controlInputModel: simd_double2x2
     private let measurementMatrix: simd_double2x2
     private let processNoise: simd_double2x2
     private let measurementNoise: simd_double2x2
-    
     private let epsilon: Double
-
+    
     init(initialEstimate: SIMD2<Double>,
          initialErrorCovariance: simd_double2x2,
          stateTransitionMatrix: simd_double2x2,
@@ -31,7 +30,7 @@ class KalmanFilter {
     }
     
     convenience init() {
-        let screenSize = SIMD2<Double>(HandConstants.screenBounds.width, HandConstants.screenBounds.height)
+        let screenSize = SIMD2<Double>(CoordConstants.screenBounds.width, CoordConstants.screenBounds.height)
         let initialState = SIMD2<Double>(screenSize.x / 2, screenSize.y / 2)
         let matrixDiagonalOne = simd_double2x2(diagonal: SIMD2<Double>(1.0, 1.0))
         let matrixDiagonalLowNoise = simd_double2x2(diagonal: SIMD2<Double>(0.1, 0.1))

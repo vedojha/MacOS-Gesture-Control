@@ -1,6 +1,11 @@
 import Foundation
 import Network
 
+enum DRVConstants {
+    static let shortSingleClick80: UInt8 = 18
+    static let shortDoubleClick80: UInt8 = 28
+}
+
 class SerialPortManager {
     let hostname: NWEndpoint.Host
     let port: NWEndpoint.Port
@@ -23,7 +28,6 @@ class SerialPortManager {
                 break
             }
         }
-
         connection?.start(queue: .global())
     }
 

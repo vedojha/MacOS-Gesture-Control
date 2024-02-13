@@ -1,34 +1,40 @@
 import SwiftUI
-import AVFoundation
+import Combine
 
 struct ContentView: View {
-    @StateObject private var viewModel = HandTrackingViewModel()
+    @StateObject private var cameraService = CameraManager()
+    @StateObject private var handTrackingViewModel = HandTrackingViewModel()
+    @State private var cancellables = Set<AnyCancellable>()
     
     var body: some View {
-        CameraPreview(previewLayer: viewModel.previewLayer ?? AVCaptureVideoPreviewLayer())
+        if let previewLayer = cameraService.previewLayer {
+            CameraPreview(previewLayer: previewLayer)
             .onAppear {
-                viewModel.startSession()
+                cameraService.handPosePublisher
+                    .receive(on: DispatchQueue.main)
+                    .sink(receiveCompletion: { completion in
+                        switch completion { 
+                        case .finished:
+                            break
+                        case .failure(let error):
+                            print("Error: \(error)")
+                        }
+                    }, receiveValue: { [handTrackingViewModel] observation in
+                        handTrackingViewModel.process(hand: observation)
+                    })
+                    .store(in: &cancellables)
+                cameraService.startSession()
+                Task {
+                    do {
+                        try await ScreenRecorder.shared.startRecording()
+                    } catch {
+                        print("Screen recording failed to start: \(error)")
+                    }
+                }
             }
             .onDisappear {
-                viewModel.stopSession()
+                cameraService.stopSession()
             }
-    }
-}
-
-struct CameraPreview: NSViewRepresentable {
-    var previewLayer: AVCaptureVideoPreviewLayer
-
-    func makeNSView(context: Context) -> NSView {
-        let view = NSView()
-        view.wantsLayer = true
-        view.layer = previewLayer
-        return view
-    }
-
-    func updateNSView(_ nsView: NSView, context: Context) {
-        if nsView.layer != previewLayer {
-            nsView.layer = previewLayer
         }
-        previewLayer.frame = nsView.bounds
     }
 }

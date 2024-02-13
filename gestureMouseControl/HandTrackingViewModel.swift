@@ -3,36 +3,21 @@ import Vision
 import AVFoundation
 import Combine
 
-enum DRVConstants {
-    static let shortSingleClick80: UInt8 = 18
-    static let shortDoubleClick80: UInt8 = 28
-}
-
 struct HandConstants {
     static let tipConfidence: Float = 0.5
     static let baseConfidence: Float = 0.5
-    static let interpolationFactor: CGFloat = 0.5
-    static let screenBounds: CGRect = NSScreen.main?.frame ?? .zero
 }
 
 class HandTrackingViewModel: NSObject, ObservableObject {
-    @Published var previewLayer: AVCaptureVideoPreviewLayer?
-    var cameraFeedSession = AVCaptureSession()
-    let videoDataOutputQueue = DispatchQueue(label: "VideoDataOutputQueue")
-    let handPoseRequest = VNDetectHumanHandPoseRequest()
-    
     @Published var hand: Hand = Hand.defaultData
     private var stateMachine: HandGestureStateMachine?
-    
     private var coordinateCalcs = CoordinateCalcs()
-    var recentTipCoords: [CGPoint] = Array(repeating: .zero, count: 5)
-    var recentBasePoints: [CGPoint] = Array(repeating: .zero, count: 5)
-    
-    let drvClient = SerialPortManager(hostname: "localhost", port: 9999)
+    private var recentTipCoords: [CGPoint] = Array(repeating: .zero, count: 5)
+    private var recentBasePoints: [CGPoint] = Array(repeating: .zero, count: 5)
+    var cancellables = Set<AnyCancellable>()
     
     override init() {
         super.init()
-        setupAVSession()
         stateMachine = HandGestureStateMachine(
             initialState: HoverState(),
             handData: self.hand,
@@ -72,7 +57,7 @@ class HandTrackingViewModel: NSObject, ObservableObject {
         recentBasePoints = interpolatedBaseCoords
         
         let baseScreenPoint = self.coordinateCalcs.convertToScreenCoordinates(normalizedPoint: self.coordinateCalcs.averageCoordinates(from: interpolatedBaseCoords))
-        let smoothedScreenPoint = self.coordinateCalcs.filteredCoordinates(point: baseScreenPoint)
+        let smoothedScreenPoint = self.coordinateCalcs.smoothedCoordinates(point: baseScreenPoint)
         
         return Hand(
             fingertips: Hand.Fingertips(
@@ -85,7 +70,7 @@ class HandTrackingViewModel: NSObject, ObservableObject {
             screenPoint: smoothedScreenPoint
         )
     }
-    
+
     func setBaselineDistancesIfNecessary(tipCoords: [CGPoint]) {
         if HandBaselineDistances.shared.distances.isEmpty {
             let distances = [
@@ -96,17 +81,5 @@ class HandTrackingViewModel: NSObject, ObservableObject {
             ]
             HandBaselineDistances.shared.distances = distances
         }
-    }
-}
-
-extension CGPoint {
-    static func + (left: CGPoint, right: CGPoint) -> CGPoint {
-        return CGPoint(x: left.x + right.x, y: left.y + right.y)
-    }
-    static func / (point: CGPoint, scalar: CGFloat) -> CGPoint {
-        return CGPoint(x: point.x / scalar, y: point.y / scalar)
-    }
-    func distance(to point: CGPoint) -> CGFloat {
-        return hypot(self.x - point.x, self.y - point.y)
     }
 }
